@@ -27,11 +27,11 @@ const Login = () => {
   };
 
   const guestDoctorLoginHandler = async () => {
-    const email = import.meta.env.VITE_GUEST_DOCTOR_EMAIL || "";
-    const password = import.meta.env.VITE_GUEST_DOCTOR_PASSWORD || "";
+    const doctorEmail = import.meta.env.VITE_GUEST_DOCTOR_EMAIL || "";
+    const doctorPassword = import.meta.env.VITE_GUEST_DOCTOR_PASSWORD || "";
     const { data } = await axios.post(backendUrl + "/api/doctor/login", {
-      email,
-      password,
+      email: doctorEmail,
+      password: doctorPassword,
     });
     if (data.success) {
       localStorage.setItem("dToken", data.token);
