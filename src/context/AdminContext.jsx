@@ -25,16 +25,15 @@ const AdminContextProvider = (props) => {
         { headers: { atoken: adminToken } }
       );
       if (data.success) {
-        setLoading(false);
         setDoctors(data.doctors);
         console.log(data.doctors);
       } else {
-        setLoading(false);
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
     }
+    setLoading(false);
   };
 
   const changeAvailability = async (docId) => {
@@ -46,16 +45,15 @@ const AdminContextProvider = (props) => {
         { headers: { atoken: adminToken } }
       );
       if (data.success) {
-        setLoading(false);
         toast.success(data.message);
         getAllDoctors();
       } else {
-        setLoading(false);
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
     }
+    setLoading(false);
   };
 
   const getAllAppointments = async () => {
@@ -66,15 +64,14 @@ const AdminContextProvider = (props) => {
       });
 
       if (data.success) {
-        setLoading(false);
         setAppointments(data.appointments);
       } else {
-        setLoading(false);
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
     }
+    setLoading(false);
   };
 
   const cancelAppointment = async (appointmentId) => {
@@ -87,16 +84,15 @@ const AdminContextProvider = (props) => {
       );
 
       if (data.success) {
-        setLoading(false);
         toast.success(data.message);
         getAllAppointments();
       } else {
-        setLoading(false);
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
     }
+    setLoading(false);
   };
 
   const getDashData = async () => {
@@ -107,15 +103,14 @@ const AdminContextProvider = (props) => {
       });
 
       if (data.success) {
-        setLoading(false);
         setDashData(data.dashData);
       } else {
-        setLoading(false);
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
     }
+    setLoading(false);
   };
 
   const value = {
