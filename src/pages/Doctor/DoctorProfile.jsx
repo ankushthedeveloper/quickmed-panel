@@ -55,7 +55,7 @@ const DoctorProfile = () => {
         {loading ? (
           <Loader />
         ) : (
-          <div className="flex flex-col gap-4 m-5">
+          <div className="flex flex-col gap-4 m-3">
             <div>
               <img
                 className="bg-primary/80 w-full sm:max-w-64 rounded-lg"
