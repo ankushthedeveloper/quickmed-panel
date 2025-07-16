@@ -50,6 +50,7 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     try {
+      setLoading(true);
       if (state === "Admin") {
         const { data } = await axios.post(backendUrl + "/api/admin/login", {
           email,
@@ -79,6 +80,7 @@ const Login = () => {
       toast.error("Login failed. Try again.");
       console.log(error);
     }
+    setLoading(false);
   };
 
   return (
